@@ -21,6 +21,8 @@
 
                 utf.Flush();
                 utf.Close();
+
+                utf.ReadChar();
             }
             Console.WriteLine("UTF-8 Encoder demo ended");
         }

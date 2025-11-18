@@ -160,57 +160,58 @@ namespace Utf8Library
         /// <exception cref="EndOfStreamException">Nothing more can be read</exception>
         public char ReadChar()
         {
-            int firstByte = _stream.ReadByte();
-            if (firstByte == -1) throw new EndOfStreamException();
+            throw new NotImplementedException();
+            //int firstByte = _stream.ReadByte();
+            //if (firstByte == -1) throw new EndOfStreamException();
 
-            int codePoint;
-            if ((firstByte & 0x80) == 0x00)
-            {
-                // 1-byte sequence: 0xxxxxxx
-                codePoint = firstByte;
-            }
-            else if ((firstByte & 0xE0) == 0xC0)
-            {
-                // 2-byte sequence: 110xxxxx 10yyyyyy
-                int secondByte = _stream.ReadByte();
-                if (secondByte == -1 || (secondByte & 0xC0) != 0x80) throw new EndOfStreamException();
-                codePoint = ((firstByte & 0x1F) << 6) | (secondByte & 0x3F);
-            }
-            else if ((firstByte & 0xF0) == 0xE0)
-            {
-                // 3-byte sequence: 1110xxxx 10yyyyyy 10zzzzzz
-                int secondByte = _stream.ReadByte();
-                int thirdByte = _stream.ReadByte();
-                if (secondByte == -1 || thirdByte == -1 ||
-                    (secondByte & 0xC0) != 0x80 ||
-                    (thirdByte & 0xC0) != 0x80)
-                    throw new EndOfStreamException();
-                codePoint = ((firstByte & 0x0F) << 12) |
-                            ((secondByte & 0x3F) << 6) |
-                             (thirdByte & 0x3F);
-            }
-            else
-            {
-                // 4-byte sequence (outside BMP, requires surrogate pairs for C# char)
-                int secondByte = _stream.ReadByte();
-                int thirdByte = _stream.ReadByte();
-                int fourthByte = _stream.ReadByte();
-                if (secondByte == -1 || thirdByte == -1 || fourthByte == -1 ||
-                    (secondByte & 0xC0) != 0x80 ||
-                    (thirdByte & 0xC0) != 0x80 ||
-                    (fourthByte & 0xC0) != 0x80)
-                    throw new EndOfStreamException();
-                codePoint = ((firstByte & 0x07) << 18) |
-                            ((secondByte & 0x3F) << 12) |
-                            ((thirdByte & 0x3F) << 6) |
-                             (fourthByte & 0x3F);
+            //int codePoint;
+            //if ((firstByte & 0x80) == 0x00)
+            //{
+            //    // 1-byte sequence: 0xxxxxxx
+            //    codePoint = firstByte;
+            //}
+            //else if ((firstByte & 0xE0) == 0xC0)
+            //{
+            //    // 2-byte sequence: 110xxxxx 10yyyyyy
+            //    int secondByte = _stream.ReadByte();
+            //    if (secondByte == -1 || (secondByte & 0xC0) != 0x80) throw new EndOfStreamException();
+            //    codePoint = ((firstByte & 0x1F) << 6) | (secondByte & 0x3F);
+            //}
+            //else if ((firstByte & 0xF0) == 0xE0)
+            //{
+            //    // 3-byte sequence: 1110xxxx 10yyyyyy 10zzzzzz
+            //    int secondByte = _stream.ReadByte();
+            //    int thirdByte = _stream.ReadByte();
+            //    if (secondByte == -1 || thirdByte == -1 ||
+            //        (secondByte & 0xC0) != 0x80 ||
+            //        (thirdByte & 0xC0) != 0x80)
+            //        throw new EndOfStreamException();
+            //    codePoint = ((firstByte & 0x0F) << 12) |
+            //                ((secondByte & 0x3F) << 6) |
+            //                 (thirdByte & 0x3F);
+            //}
+            //else
+            //{
+            //    // 4-byte sequence (outside BMP, requires surrogate pairs for C# char)
+            //    int secondByte = _stream.ReadByte();
+            //    int thirdByte = _stream.ReadByte();
+            //    int fourthByte = _stream.ReadByte();
+            //    if (secondByte == -1 || thirdByte == -1 || fourthByte == -1 ||
+            //        (secondByte & 0xC0) != 0x80 ||
+            //        (thirdByte & 0xC0) != 0x80 ||
+            //        (fourthByte & 0xC0) != 0x80)
+            //        throw new EndOfStreamException();
+            //    codePoint = ((firstByte & 0x07) << 18) |
+            //                ((secondByte & 0x3F) << 12) |
+            //                ((thirdByte & 0x3F) << 6) |
+            //                 (fourthByte & 0x3F);
 
-                // For full Unicode > BMP, C# char cannot represent beyond 0xFFFF
-                // You would need a string or a pair of chars for surrogate pairs here
-                throw new NotImplementedException("Surrogate pairs not supported in char return");
-            }
+            //    // For full Unicode > BMP, C# char cannot represent beyond 0xFFFF
+            //    // You would need a string or a pair of chars for surrogate pairs here
+            //    throw new NotImplementedException("Surrogate pairs not supported in char return");
+            //}
 
-            return (char)codePoint;
+            //return (char)codePoint;
         }
 
         /// <summary>

@@ -10,6 +10,8 @@
             {
                 file.SetLength(0);
 
+                utf.Write(-1);
+                utf.Write(Environment.NewLine);
                 utf.Write('☎');
                 utf.Write(Environment.NewLine);
                 utf.Write("Yay! 🚀");
@@ -22,7 +24,7 @@
                 utf.Flush();
                 utf.Close();
 
-                utf.ReadChar();
+                //utf.ReadChar();
             }
             Console.WriteLine("UTF-8 Encoder demo ended");
         }

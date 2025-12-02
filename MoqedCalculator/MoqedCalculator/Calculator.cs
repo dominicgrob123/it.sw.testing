@@ -23,7 +23,11 @@
 
         public double Divide(double left, double right)
         {
-            throw new NotImplementedException();
+            if (right == 0)
+            {
+                throw new DivideByZeroException();
+            }
+            else return left / right;
         }
 
         public double Multiply(double left, double right)

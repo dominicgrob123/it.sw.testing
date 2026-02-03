@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GarageDoorController", "GarageDoorController\GarageDoorController.csproj", "{CEEDF850-9F5F-4F24-B595-61B65EF435EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GarageDoorSimulation", "GarageDoorSimulation\GarageDoorSimulation.csproj", "{A8E797E0-7E48-4B91-B86F-24A0F107E09A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarageDoorController.Test", "GarageDoorController.Test\GarageDoorController.Test.csproj", "{99680FD5-67F7-411B-A50B-00593DFE0E0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEEDF850-9F5F-4F24-B595-61B65EF435EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEEDF850-9F5F-4F24-B595-61B65EF435EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEEDF850-9F5F-4F24-B595-61B65EF435EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEEDF850-9F5F-4F24-B595-61B65EF435EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E797E0-7E48-4B91-B86F-24A0F107E09A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E797E0-7E48-4B91-B86F-24A0F107E09A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E797E0-7E48-4B91-B86F-24A0F107E09A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E797E0-7E48-4B91-B86F-24A0F107E09A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99680FD5-67F7-411B-A50B-00593DFE0E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99680FD5-67F7-411B-A50B-00593DFE0E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99680FD5-67F7-411B-A50B-00593DFE0E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99680FD5-67F7-411B-A50B-00593DFE0E0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A21FA77E-86CF-4765-9303-18DAE0EAE42C}
+	EndGlobalSection
+EndGlobal
